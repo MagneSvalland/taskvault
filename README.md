@@ -11,16 +11,23 @@ A fullstack task manager I built to get more experience with React, Spring Boot,
 <img width="721" height="533" alt="image" src="https://github.com/user-attachments/assets/e76fa871-6ac1-4304-b215-b04970169199" />
 
 ### All tasks
-<img width="768" height="453" alt="image" src="https://github.com/user-attachments/assets/251be995-ec21-4fca-a002-3944c5ea3336" />
+<img width="864" height="591" alt="image" src="https://github.com/user-attachments/assets/9a319877-8770-45aa-a0c4-04f15bf2ebb4" />
 
 ### Marking a task as done
-<img width="744" height="459" alt="image" src="https://github.com/user-attachments/assets/f4ca0572-0943-4179-943f-aa22fc55a8bd" />
+<img width="779" height="603" alt="image" src="https://github.com/user-attachments/assets/7aa0dc0f-25e9-40d4-8389-2766225c7581" />
 
 ### Active tasks
-<img width="779" height="471" alt="image" src="https://github.com/user-attachments/assets/0803e9bf-b996-4191-b533-30fbb9201112" />
+<img width="775" height="561" alt="image" src="https://github.com/user-attachments/assets/7432014d-24cf-4239-8e23-880409d4db48" />
 
 ### Completed tasks
-<img width="767" height="425" alt="image" src="https://github.com/user-attachments/assets/40355959-db50-4f7e-b6a8-b944959d81be" />
+<img width="763" height="501" alt="image" src="https://github.com/user-attachments/assets/23ad6559-b324-4ea3-ae94-10a68f694415" />
+
+### Light mode
+<img width="763" height="607" alt="image" src="https://github.com/user-attachments/assets/19f4fff1-40ec-4a59-8fa7-619e7636f44b" />
+
+### Analytics
+<img width="765" height="717" alt="image" src="https://github.com/user-attachments/assets/d6043877-6d34-4f68-b222-b6c05d4ef22d" />
+
 
 ## Tech stack
 
