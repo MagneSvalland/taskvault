@@ -25,7 +25,8 @@ export default function DashboardPage() {
       return
     }
     fetchTasks()
-  }, [router])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const fetchTasks = async () => {
     try {
