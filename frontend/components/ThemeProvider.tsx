@@ -13,8 +13,8 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     const stored = localStorage.getItem('theme')
-    const isDark = stored ? stored === 'dark' : true
-    setDark(isDark)
+    const isDark = stored !== 'light'
+    setDark(isDark) // eslint-disable-line react-hooks/set-state-in-effect
     document.documentElement.classList.toggle('dark', isDark)
   }, [])
 

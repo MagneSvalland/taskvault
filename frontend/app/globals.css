@@ -3,26 +3,38 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --tv-bg:           #ffffff;
+  --tv-bg-card:      #f9fafb;
+  --tv-bg-hover:     #f3f4f6;
+  --tv-bg-input:     #f3f4f6;
+  --tv-text:         #111827;
+  --tv-text-muted:   #6b7280;
+  --tv-text-faint:   #9ca3af;
+  --tv-border:       #e5e7eb;
+  --tv-btn:          #111827;
+  --tv-btn-text:     #ffffff;
+}
+
+html.dark {
+  --tv-bg:           #0e0e10;
+  --tv-bg-card:      #18181b;
+  --tv-bg-hover:     #27272a;
+  --tv-bg-input:     #18181b;
+  --tv-text:         #ffffff;
+  --tv-text-muted:   #71717a;
+  --tv-text-faint:   #52525b;
+  --tv-border:       #27272a;
+  --tv-btn:          #ffffff;
+  --tv-btn-text:     #000000;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--tv-bg);
+  color: var(--tv-text);
   font-family: Arial, Helvetica, sans-serif;
 }
