@@ -25,7 +25,7 @@ export default function DashboardPage() {
       return
     }
     fetchTasks()
-  }, [])
+  }, [router])
 
   const fetchTasks = async () => {
     try {
