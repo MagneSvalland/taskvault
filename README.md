@@ -30,17 +30,22 @@ A fullstack task manager I built to get more experience with React, Spring Boot,
 | Backend | Java Spring Boot 3 + Spring Security |
 | Database | PostgreSQL 16 |
 | Auth | JWT + BCrypt |
-| DevOps | Docker + Docker Compose |
+| Charts | Recharts |
+| DevOps | Docker + Docker Compose + GitHub Actions |
 
 ## Features
 
 - Register and log in with JWT authentication
 - Passwords hashed with BCrypt
 - Add tasks with priority levels — low, medium, or high
-- Set due dates with automatic overdue warnings
+- Set due dates with smart countdowns — shows "today", "2d left", or "⚠ 3d overdue"
+- Live search — filter tasks by title instantly
 - Mark tasks as done and filter by active / completed
+- Analytics dashboard — visual breakdown of tasks by priority and completion rate
+- Dark / light mode toggle with preference saved across sessions
 - Each user only sees their own tasks
 - Role-based access control (USER / ADMIN)
+- CI/CD pipeline with GitHub Actions — automated lint, test, and Docker build on every push
 
 ## Running locally
 

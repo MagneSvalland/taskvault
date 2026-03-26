@@ -6,6 +6,7 @@ import api from '@/lib/api'
 import { clearAuth, getUsername, isAuthenticated } from '@/lib/auth'
 import { Task, TaskRequest } from '@/types'
 import { useTheme } from '@/components/ThemeProvider'
+import Link from 'next/link'
 
 export default function DashboardPage() {
   const router = useRouter()
@@ -16,6 +17,7 @@ export default function DashboardPage() {
   const [priority, setPriority] = useState<'LOW' | 'MEDIUM' | 'HIGH'>('MEDIUM')
   const [dueDate, setDueDate] = useState('')
   const [filter, setFilter] = useState<'ALL' | 'ACTIVE' | 'COMPLETED'>('ALL')
+  const [search, setSearch] = useState('')
   const username = getUsername()
   const { dark, toggle } = useTheme()
 
@@ -86,8 +88,9 @@ export default function DashboardPage() {
   }
 
   const filtered = tasks.filter(t => {
-    if (filter === 'ACTIVE') return t.status === 'ACTIVE'
-    if (filter === 'COMPLETED') return t.status === 'COMPLETED'
+    if (filter === 'ACTIVE' && t.status !== 'ACTIVE') return false
+    if (filter === 'COMPLETED' && t.status !== 'COMPLETED') return false
+    if (search && !t.title.toLowerCase().includes(search.toLowerCase())) return false
     return true
   })
 
@@ -100,6 +103,17 @@ export default function DashboardPage() {
   const isOverdue = (dueDate?: string, status?: string) => {
     if (!dueDate || status === 'COMPLETED') return false
     return new Date(dueDate) < new Date(new Date().toDateString())
+  }
+
+  const dueDateLabel = (dueDate: string, status: string) => {
+    if (status === 'COMPLETED') return dueDate
+    const today = new Date(new Date().toDateString())
+    const due = new Date(dueDate)
+    const diff = Math.round((due.getTime() - today.getTime()) / (1000 * 60 * 60 * 24))
+    if (diff < 0) return `⚠ ${Math.abs(diff)}d overdue`
+    if (diff === 0) return '⚡ today'
+    if (diff === 1) return 'tomorrow'
+    return `${diff}d left`
   }
 
   if (loading) {
@@ -123,6 +137,13 @@ export default function DashboardPage() {
             </p>
           </div>
           <div className="flex items-center gap-3">
+            <Link
+              href="/analytics"
+              className="text-sm font-mono transition-colors"
+              style={{ color: 'var(--tv-text-muted)' }}
+            >
+              stats
+            </Link>
             <button
               onClick={toggle}
               className="text-sm font-mono transition-colors"
@@ -140,6 +161,16 @@ export default function DashboardPage() {
             </button>
           </div>
         </div>
+
+        {/* Search */}
+        <input
+          type="text"
+          placeholder="Search tasks..."
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          className="w-full rounded-md px-4 py-2 text-sm outline-none border mb-6"
+          style={{ background: 'var(--tv-bg-input)', borderColor: 'var(--tv-border)', color: 'var(--tv-text)' }}
+        />
 
         {/* Add task form */}
         <form onSubmit={addTask} className="mb-8 space-y-3">
@@ -245,7 +276,7 @@ export default function DashboardPage() {
                   {task.dueDate && (
                     <p className={`text-xs font-mono mt-0.5 ${isOverdue(task.dueDate, task.status) ? 'text-rose-400' : ''}`}
                       style={!isOverdue(task.dueDate, task.status) ? { color: 'var(--tv-text-muted)' } : {}}>
-                      {isOverdue(task.dueDate, task.status) ? '⚠ ' : ''}{task.dueDate}
+                      {dueDateLabel(task.dueDate, task.status)}
                     </p>
                   )}
                 </div>
