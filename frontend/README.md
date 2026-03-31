@@ -1,6 +1,6 @@
 # TaskVault
 
-A fullstack task management application with JWT authentication, real-time filtering, and productivity analytics.
+A fullstack task management application with JWT authentication, real-time filtering, productivity analytics, and dark/light mode support.
 
 ## Features
 
