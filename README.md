@@ -21,7 +21,7 @@ A fullstack task manager I built to get more experience with React, Spring Boot,
 - Set due dates with smart countdowns - shows "today", "2d left", or "3d overdue"
 - Live search - filter tasks by title instantly
 - Mark tasks as done and filter by active / completed
-- Analytics dashboard — visual breakdown of tasks by priority and completion rate
+- Analytics dashboard - visual breakdown of tasks by priority and completion rate
 - Dark / light mode toggle with preference saved across sessions
 - Each user only sees their own tasks
 - Role-based access control (USER / ADMIN)
