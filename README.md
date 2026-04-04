@@ -43,7 +43,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) and register an account.
 
-## Screenshots
+## Showcase
 
 ### Login
 <img width="750" height="575" alt="image" src="https://github.com/user-attachments/assets/50d3a05f-6e22-4812-ab94-3a4b6f0d0fe6" />
