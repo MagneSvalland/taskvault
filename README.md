@@ -2,6 +2,47 @@
 
 A fullstack task manager I built to get more experience with React, Spring Boot, and Docker working together. Users can register, log in, and manage their tasks, all secured with JWT authentication.
 
+## Tech stack
+
+| Layer | Tech |
+|---|---|
+| Frontend | Next.js 16 + TypeScript |
+| Backend | Java Spring Boot 3 + Spring Security |
+| Database | PostgreSQL 16 |
+| Auth | JWT + BCrypt |
+| Charts | Recharts |
+| DevOps | Docker + Docker Compose + GitHub Actions |
+
+## Features
+
+- Register and log in with JWT authentication
+- Passwords hashed with BCrypt
+- Add tasks with priority levels - low, medium, or high
+- Set due dates with smart countdowns - shows "today", "2d left", or "3d overdue"
+- Live search - filter tasks by title instantly
+- Mark tasks as done and filter by active / completed
+- Analytics dashboard — visual breakdown of tasks by priority and completion rate
+- Dark / light mode toggle with preference saved across sessions
+- Each user only sees their own tasks
+- Role-based access control (USER / ADMIN)
+- CI/CD pipeline with GitHub Actions - automated lint, test, and Docker build on every push
+
+## Running locally
+
+You need Docker Desktop installed. Then just run:
+```bash
+docker-compose up --build
+```
+
+Start the frontend in a separate terminal:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) and register an account.
+
 ## Screenshots
 
 ### Login
@@ -28,44 +69,3 @@ A fullstack task manager I built to get more experience with React, Spring Boot,
 ### Analytics
 <img width="765" height="717" alt="image" src="https://github.com/user-attachments/assets/d6043877-6d34-4f68-b222-b6c05d4ef22d" />
 
-
-## Tech stack
-
-| Layer | Tech |
-|---|---|
-| Frontend | Next.js 16 + TypeScript |
-| Backend | Java Spring Boot 3 + Spring Security |
-| Database | PostgreSQL 16 |
-| Auth | JWT + BCrypt |
-| Charts | Recharts |
-| DevOps | Docker + Docker Compose + GitHub Actions |
-
-## Features
-
-- Register and log in with JWT authentication
-- Passwords hashed with BCrypt
-- Add tasks with priority levels — low, medium, or high
-- Set due dates with smart countdowns — shows "today", "2d left", or "⚠ 3d overdue"
-- Live search — filter tasks by title instantly
-- Mark tasks as done and filter by active / completed
-- Analytics dashboard — visual breakdown of tasks by priority and completion rate
-- Dark / light mode toggle with preference saved across sessions
-- Each user only sees their own tasks
-- Role-based access control (USER / ADMIN)
-- CI/CD pipeline with GitHub Actions — automated lint, test, and Docker build on every push
-
-## Running locally
-
-You need Docker Desktop installed. Then just run:
-```bash
-docker-compose up --build
-```
-
-Start the frontend in a separate terminal:
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) and register an account.
